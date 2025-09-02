@@ -2,11 +2,11 @@
 
 ## Objectives
 
-After this lesson, you should be able to...
+After this lesson, you should be able to:
 
-1. Create a `has_many` and `belongs_to` association.
+1. Create `has_many` and `belongs_to` associations.
 2. Build associated data through the console and `db/seeds.rb`.
-3. Query for associated data using methods provided by association.
+3. Query for associated data using methods provided by associations.
 4. Embed association data within views.
 5. Iterate over associated data within a view displaying individual instances.
 
@@ -36,7 +36,7 @@ end
 
 ## Seed Data
 
-Once you start working with more and more complicated data sets, you will realize that there is a lot of _stuff_ you have to set up just to be able to play with your methods. The associations are so vast that you need to make many posts with many categories and all of that! How frustrating. What you are doing is called "seeding" the database. Pretty much putting in some test data so that you can play with your app. In Rails we set up our seed data in `db/seeds.rb`. Then we'll be able to just seed (or re-seed) the database with a quick `rake db:seed`.
+Once you start working with more and more complicated data sets, you will realize that there is a lot of _stuff_ you have to set up just to be able to play with your methods. The associations are so vast that you need to make many posts with many categories and all of that! How frustrating. This process is called "seeding" the database. In Rails, we set up our seed data in `db/seeds.rb`. Then we can seed (or re-seed) the database with `bin/rails db:seed`.
 
 ```ruby
 # db/seeds.rb
@@ -50,13 +50,13 @@ movies = Category.create!(name: "Movies")
 movies.posts.create!(title: "Top 20 Summer Blockbusters Featuring a Cute Dog")
 ```
 
-Woot! The best thing about the `seeds.rb` file is that it's just Ruby! There is no magic. Look, super standard Ruby. To run the seed file in the development environment, you can activate the rake task:
+Woot! The best thing about the `seeds.rb` file is that it's just Ruby! There is no magic. Look, super standard Ruby. To run the seed file in the development environment, you can activate the following command:
 
 ```bash
-rake db:seed
+bin/rails db:seed
 ```
 
-If you want to play around with the data, of course, it's always possible to take the create statements exactly as written above and type them into `rails console`.
+If you want to experiment with the data, you can take the create statements above and type them into `bin/rails console`.
 
 ## The Views
 
